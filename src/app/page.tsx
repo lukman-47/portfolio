@@ -83,6 +83,18 @@ export default async function Portfolio() {
     <div id="top" className="min-h-screen bg-[#05071a] text-slate-50 relative overflow-hidden scroll-smooth">
       {/* Cinematic Milky Way Night Sky */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden select-none">
+        
+        {/* Mobile Star Scaling CSS */}
+        <style>{`
+          @media (max-width: 768px) {
+            .star-layer > div {
+              transform: scale(0.4) !important;
+            }
+            .meteor-layer > div > div {
+              transform: rotate(-45deg) scale(0.4) !important;
+            }
+          }
+        `}</style>
 
         {/* === LAYER 1: Vibrant Galaxy Gradients === */}
         {/* Deep blue left atmosphere */}
@@ -98,7 +110,7 @@ export default async function Portfolio() {
 
         {/* === DEDICATED CENTER HERO STAR LAYER === */}
         {/* Guarantees bright stars are visible in the center area */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 star-layer">
           {[...Array(35)].map((_, i) => {
             const sz = Math.random() > 0.8 ? 2.5 : Math.random() > 0.5 ? 1.5 : 1;
             const isSparkle = sz === 2.5;
@@ -137,7 +149,7 @@ export default async function Portfolio() {
         </div>
 
         {/* === LAYER 2: Milky Way Galaxy Band (diagonal dense star cluster) === */}
-        <div className="absolute inset-0 rotate-[28deg] scale-[1.8] opacity-60">
+        <div className="absolute inset-0 rotate-[28deg] scale-[1.8] opacity-60 star-layer">
           {[...Array(200)].map((_, i) => {
             const band = Math.random();
             const inCore = band > 0.55;
@@ -159,7 +171,7 @@ export default async function Portfolio() {
         </div>
 
         {/* === LAYER 3: Scattered Star Field === */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 star-layer">
           {[...Array(180)].map((_, i) => {
             const r = Math.random();
             const sz = r < 0.65 ? 1 : r < 0.88 ? 1.5 : r < 0.97 ? 2.5 : 3.5;
@@ -185,7 +197,7 @@ export default async function Portfolio() {
         </div>
 
         {/* === LAYER 4: Bright Starburst Sparkle Stars === */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 star-layer">
           {[...Array(18)].map((_, i) => (
             <div
               key={`sb-${i}`}
@@ -216,7 +228,7 @@ export default async function Portfolio() {
         </div>
 
         {/* === LAYER 5: Shooting Stars with Starburst Heads & Long Trails === */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute inset-0 z-0 pointer-events-none meteor-layer">
           {[...Array(28)].map((_, i) => (
             <div
               key={`meteor-${i}`}
@@ -256,7 +268,7 @@ export default async function Portfolio() {
         </div>
 
         {/* === LAYER 6: Shooting Stars targeted through CENTER HERO AREA === */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute inset-0 z-0 pointer-events-none meteor-layer">
           {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((i) => (
             <div
               key={`center-meteor-${i}`}
