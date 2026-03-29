@@ -290,14 +290,48 @@ export default async function Portfolio() {
         </div>
       </div>
 
-      {/* Premium Text Logo */}
-      <div className="fixed top-8 left-6 md:top-10 md:left-12 z-[110]">
-        <Link href="#top" className="text-2xl md:text-3xl font-black tracking-tighter flex items-center gap-1 group drop-shadow-lg">
-          <span className="text-purple-500 group-hover:-translate-x-1 transition-transform duration-300">&lt;</span>
-          <span className="text-slate-100 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-amber-400 transition-all duration-500 pb-1">
-            LUKMAN
-          </span>
-          <span className="text-purple-500 group-hover:translate-x-1 transition-transform duration-300">/&gt;</span>
+      {/* Royal Shimmer CSS & Premium Text Logo */}
+      <style>{`
+        @keyframes royal-shine {
+          to { background-position: 200% center; }
+        }
+        .text-royal-shine {
+          background: linear-gradient(
+            to right,
+            #d8b4fe 0%,
+            #a855f7 20%,
+            #fbbf24 40%,
+            #fef08a 50%,
+            #fbbf24 60%,
+            #a855f7 80%,
+            #d8b4fe 100%
+          );
+          background-size: 200% auto;
+          color: transparent;
+          -webkit-background-clip: text;
+          background-clip: text;
+          animation: royal-shine 4s linear infinite;
+        }
+      `}</style>
+      <div className="fixed top-6 left-4 md:top-8 md:left-8 z-[110] select-none">
+        <Link href="#top" className="group relative block px-3 py-2">
+          {/* Subtle Outer Glow */}
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-amber-500/10 to-transparent blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000 rounded-full" />
+          
+          <div className="relative flex flex-col">
+            <h1 className="text-[22px] md:text-3xl font-black tracking-tighter whitespace-nowrap flex items-center">
+              {/* LUKMAN with continuous royal shine */}
+              <span className="uppercase text-royal-shine drop-shadow-[0_2px_15px_rgba(251,191,36,0.3)] group-hover:scale-105 transition-transform duration-500 origin-left">
+                LUKMAN
+              </span>
+              {/* SHAIKH in elegant serif gold */}
+              <span className="ml-2 font-serif italic text-lg md:text-[26px] text-amber-200/90 font-medium tracking-wide group-hover:scale-105 transition-transform duration-500 delay-100 origin-left drop-shadow-md">
+                Shaikh
+              </span>
+            </h1>
+            {/* Animated Royal Underline */}
+            <div className="h-[2px] w-0 bg-gradient-to-r from-amber-400 via-purple-500 to-transparent group-hover:w-full transition-all duration-[800ms] ease-out mt-1 rounded-full opacity-80 shadow-[0_0_10px_rgba(168,85,247,0.5)]" />
+          </div>
         </Link>
       </div>
 
