@@ -4,11 +4,7 @@ import { ExternalLink, Award, GraduationCap, Calendar, ShieldCheck, SearchCheck,
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import connectMongo from '@/lib/mongodb';
 import { AcademicJourneyClient } from '@/app/academic-journey-client';
-import Skill from '@/models/Skill';
-import Certificate from '@/models/Certificate';
-import Project from '@/models/Project';
 import ContactForm from '@/app/contact-form';
 import DynamicIsland from '@/app/hero-buttons';
 import ScrollToTop from '@/app/scroll-to-top';
@@ -17,8 +13,6 @@ import ProfileFlipper from '@/app/profile-flipper';
 export const revalidate = 0; // Disable caching for the dynamic data
 
 export default async function Portfolio() {
-  await connectMongo();
-  // ... rest of data fetching ...
   const fallbackSkills = [
     { _id: '1', name: 'Front-End' },
     { _id: '2', name: 'Back-End Routing' },
@@ -77,27 +71,9 @@ export default async function Portfolio() {
     },
   ];
 
-  let skills = [];
-  let certificates = [];
-  let projects = [];
-
-  try {
-    skills = await Skill.find({});
-    if (skills.length === 0) skills = fallbackSkills as any;
-    certificates = await Certificate.find({});
-    projects = await Project.find({});
-    if (projects.length === 0) projects = fallbackProjects as any;
-    // Limit to 6 projects or pad with fallbacks to ensure exact structure
-    if (projects.length < 6) {
-      projects = [...projects, ...fallbackProjects.slice(projects.length, 6)];
-    } else {
-      projects = projects.slice(0, 6);
-    }
-  } catch (e) {
-    console.log("DB might not be connected yet", e);
-    skills = fallbackSkills as any;
-    projects = fallbackProjects as any;
-  }
+  let skills = fallbackSkills as any;
+  let certificates = [] as any;
+  let projects = fallbackProjects as any;
 
   // Split projects into two columns
   const leftProjects = projects.filter((_: any, i: number) => i % 2 === 0);
