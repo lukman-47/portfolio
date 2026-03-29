@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "Lukman Shaikh - Portfolio",
   description: "Personal portfolio of Lukman Shaikh",
   icons: {
-    icon: "/logo-lukman.png",
+    icon: "/logo-lukman.svg",
   },
 };
 

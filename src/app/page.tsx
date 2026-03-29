@@ -330,8 +330,24 @@ export default async function Portfolio() {
           {/* Subtle Outer Glow */}
           <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-amber-500/10 to-transparent blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000 rounded-full" />
           
-          <div className="relative h-10 w-10 md:h-12 md:w-12 group-hover:scale-110 transition-transform duration-500">
-             <img src="/logo-lukman.png" alt="Logo" className="w-full h-full object-contain filter drop-shadow-[0_0_8px_rgba(168,85,247,0.5)]" />
+          <div className="relative h-10 w-10 md:h-12 md:w-12 group-hover:scale-110 transition-transform duration-500 flex items-center justify-center">
+             <svg width="48" height="48" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full drop-shadow-[0_0_12px_rgba(0,102,255,0.4)]">
+               <defs>
+                 <linearGradient id="tech-ls-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                   <stop offset="0%" style={{stopColor:'#2563EB', stopOpacity:1}} />
+                   <stop offset="100%" style={{stopColor:'#06B6D4', stopOpacity:1}} />
+                 </linearGradient>
+               </defs>
+               {/* Technical L-shape */}
+               <path d="M22 28V72H52" stroke="url(#tech-ls-grad)" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" />
+               <circle cx="22" cy="28" r="4" fill="white" stroke="url(#tech-ls-grad)" strokeWidth="1.5" />
+               
+               {/* Technical S-shape interlocking */}
+               <path d="M78 35H48V50H78V65H48" stroke="url(#tech-ls-grad)" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" />
+               <circle cx="78" cy="35" r="4" fill="white" stroke="url(#tech-ls-grad)" strokeWidth="1.5" />
+               <circle cx="48" cy="65" r="4" fill="white" stroke="url(#tech-ls-grad)" strokeWidth="1.5" />
+               <circle cx="52" cy="72" r="4" fill="url(#tech-ls-grad)" />
+             </svg>
           </div>
 
           <div className="relative flex flex-col">
