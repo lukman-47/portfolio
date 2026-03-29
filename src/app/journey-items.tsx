@@ -55,7 +55,10 @@ export function JourneyMilestone({ year, school, description, logo, color, rever
         onClick={() => setShowLogo(!showLogo)}
       >
         {active && (
-          <div className="absolute -top-1 -right-1 z-[60] w-4 h-4 md:w-5 md:h-5 bg-green-500 rounded-full border-2 border-white animate-pulse shadow-[0_0_8px_rgba(34,197,94,1)]" />
+          <div 
+            className="absolute top-0 right-0 md:-top-0.5 md:-right-0.5 z-[60] w-2.5 h-2.5 md:w-3.5 md:h-3.5 bg-green-500 rounded-full border-[1.5px] border-white animate-pulse shadow-[0_0_6px_rgba(34,197,94,0.8)]" 
+            style={{ animationDuration: '600ms' }}
+          />
         )}
         <GraduationCap className={`w-8 h-8 md:w-12 md:h-12 absolute z-0 transition-opacity duration-500 ${colors[color].muted} ${showLogo ? 'opacity-0' : 'opacity-0 md:opacity-100 md:group-hover:opacity-0'}`} />
         <img 
