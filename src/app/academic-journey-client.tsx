@@ -38,6 +38,7 @@ export function AcademicJourneyClient() {
       color: "green" as const,
       reverse: true,
       side: "right" as const,
+      active: true,
     },
   ];
 

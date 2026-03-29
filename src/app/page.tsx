@@ -80,7 +80,7 @@ export default async function Portfolio() {
   const rightProjects = projects.filter((_: any, i: number) => i % 2 !== 0);
 
   return (
-    <div id="top" className="min-h-screen bg-[#05071a] text-slate-50 relative overflow-hidden scroll-smooth">
+    <div id="top" className="min-h-screen bg-[#05071a] text-slate-50 relative overflow-hidden scroll-smooth animate-in fade-in zoom-in-[0.98] duration-1000 ease-out fill-mode-forwards">
       {/* Cinematic Milky Way Night Sky */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden select-none">
         

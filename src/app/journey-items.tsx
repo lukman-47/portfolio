@@ -11,9 +11,10 @@ interface MilestoneProps {
   color: 'purple' | 'amber' | 'green';
   reverse?: boolean; // Controls top/bottom on Desktop
   side: "left" | "right"; // Controls left/right on Mobile
+  active?: boolean;
 }
 
-export function JourneyMilestone({ year, school, description, logo, color, reverse, side }: MilestoneProps) {
+export function JourneyMilestone({ year, school, description, logo, color, reverse, side, active }: MilestoneProps) {
   const [showLogo, setShowLogo] = useState(false);
 
   const colors = {
@@ -53,6 +54,9 @@ export function JourneyMilestone({ year, school, description, logo, color, rever
         className={`z-50 bg-white p-2 rounded-full border-4 ${colors[color].border} shadow-2xl relative h-16 w-16 md:h-24 md:w-24 flex items-center justify-center transition-all duration-500 md:group-hover:scale-110 cursor-pointer`}
         onClick={() => setShowLogo(!showLogo)}
       >
+        {active && (
+          <div className="absolute -top-1 -right-1 z-[60] w-4 h-4 md:w-5 md:h-5 bg-green-500 rounded-full border-2 border-white animate-pulse shadow-[0_0_8px_rgba(34,197,94,1)]" />
+        )}
         <GraduationCap className={`w-8 h-8 md:w-12 md:h-12 absolute z-0 transition-opacity duration-500 ${colors[color].muted} ${showLogo ? 'opacity-0' : 'opacity-0 md:opacity-100 md:group-hover:opacity-0'}`} />
         <img 
           src={logo} 
