@@ -49,12 +49,12 @@ export default function DynamicIsland() {
   ];
 
   return (
-    <div className="w-full flex justify-center py-6 h-[70px] md:h-[100px]">
+    <div className="w-full flex justify-center py-6">
       <motion.div 
         variants={container}
         initial="hidden"
         animate={visible ? "show" : "hidden"}
-        className={`flex items-center justify-center gap-1.5 md:gap-14 p-1.5 md:p-4 px-2 md:px-20 bg-slate-900/95 backdrop-blur-3xl border border-white/10 rounded-full shadow-2xl transition-all duration-500 max-w-[98vw] md:max-w-none ${visible ? 'pointer-events-auto' : 'pointer-events-none'}`}
+        className={`flex items-center justify-center gap-3 md:gap-14 py-3 md:py-4 px-4 md:px-20 bg-slate-900/20 backdrop-blur-3xl border border-white/20 rounded-full shadow-2xl transition-all duration-500 min-w-[90vw] md:min-w-0 md:max-w-none ${visible ? 'pointer-events-auto' : 'pointer-events-none'}`}
       >
         {/* Navigation Section */}
         <div className="flex items-center gap-1.5 md:gap-10 pr-1.5 md:pr-10 border-r border-white/10">
@@ -102,7 +102,7 @@ export default function DynamicIsland() {
           </motion.div>
 
           <motion.div variants={item} whileHover={{ scale: 1.2, y: -4 }}>
-            <Link href="mailto:lukman439026@gmail.com" className="flex flex-col items-center gap-1 group relative">
+            <Link href="https://mail.google.com/mail/?view=cm&fs=1&to=lukman439026@gmail.com" target="_blank" className="flex flex-col items-center gap-1 group relative">
               <motion.div animate={wiggleAnimation} transition={{ delay: 0.4 }}>
                 <div className="scale-90 md:scale-100">
                   <MailIcon className="w-5 h-5 text-white/60 group-hover:text-purple-400 transition-colors" />
