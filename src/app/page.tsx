@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { ExternalLink, Award, GraduationCap, Calendar, ShieldCheck, SearchCheck, Mail } from 'lucide-react';
+import { ExternalLink, Award, GraduationCap, Calendar, ShieldCheck, SearchCheck, Mail, Code2, Server, Database, Wrench } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -397,18 +397,72 @@ export default async function Portfolio() {
         </section>
 
         {/* Skills Section */}
-        <section id="skills" className="space-y-12 max-w-5xl mx-auto reveal animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-300 fill-mode-both scroll-mt-32">
+        <section id="skills" className="space-y-12 max-w-5xl mx-auto reveal animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-300 fill-mode-both scroll-mt-32 px-4">
           <div className="text-center space-y-2">
             <h2 className="text-3xl font-bold tracking-tight text-white">Technical Expertise</h2>
             <p className="text-slate-400 font-medium">Technologies and paradigms I specialize in.</p>
           </div>
 
-          <div className="flex flex-wrap gap-4 justify-center">
-            {skills.map((skill: any) => (
-              <Badge key={skill._id.toString()} variant="outline" className="px-5 py-2.5 md:px-6 md:py-3 text-sm md:text-base rounded-full shadow-lg hover:-translate-y-1 transition-all duration-300 bg-gradient-to-r from-slate-900 to-slate-800 text-slate-100 border border-purple-500/30 hover:border-amber-400/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] cursor-default font-bold tracking-wide">
-                {skill.name}
-              </Badge>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Frontend */}
+            <div className="bg-slate-900/40 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 shadow-xl hover:border-purple-500/50 transition-colors">
+              <div className="flex items-center gap-3 mb-6 border-b border-slate-700/50 pb-4">
+                <Code2 className="text-purple-400 w-6 h-6" />
+                <h3 className="text-xl font-bold tracking-tight text-white">Frontend</h3>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                {['React', 'Next.js', 'Tailwind CSS'].map(skill => (
+                  <Badge key={skill} variant="outline" className="px-4 py-2 text-sm rounded-lg shadow-sm hover:-translate-y-1 transition-all duration-300 bg-gradient-to-r from-slate-900 to-slate-800 text-slate-200 border border-purple-500/30 hover:border-amber-400/60 cursor-default font-semibold tracking-wide">
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+
+            {/* Backend */}
+            <div className="bg-slate-900/40 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 shadow-xl hover:border-emerald-500/50 transition-colors">
+              <div className="flex items-center gap-3 mb-6 border-b border-slate-700/50 pb-4">
+                <Server className="text-emerald-400 w-6 h-6" />
+                <h3 className="text-xl font-bold tracking-tight text-white">Backend</h3>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                {['Node.js', 'Prisma'].map(skill => (
+                  <Badge key={skill} variant="outline" className="px-4 py-2 text-sm rounded-lg shadow-sm hover:-translate-y-1 transition-all duration-300 bg-gradient-to-r from-slate-900 to-slate-800 text-slate-200 border border-emerald-500/30 hover:border-amber-400/60 cursor-default font-semibold tracking-wide">
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+
+            {/* Database */}
+            <div className="bg-slate-900/40 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 shadow-xl hover:border-cyan-500/50 transition-colors">
+              <div className="flex items-center gap-3 mb-6 border-b border-slate-700/50 pb-4">
+                <Database className="text-cyan-400 w-6 h-6" />
+                <h3 className="text-xl font-bold tracking-tight text-white">Database</h3>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                {['MongoDB', 'SQL', 'PostgreSQL'].map(skill => (
+                  <Badge key={skill} variant="outline" className="px-4 py-2 text-sm rounded-lg shadow-sm hover:-translate-y-1 transition-all duration-300 bg-gradient-to-r from-slate-900 to-slate-800 text-slate-200 border border-cyan-500/30 hover:border-amber-400/60 cursor-default font-semibold tracking-wide">
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+
+            {/* Tools */}
+            <div className="bg-slate-900/40 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 shadow-xl hover:border-amber-500/50 transition-colors">
+              <div className="flex items-center gap-3 mb-6 border-b border-slate-700/50 pb-4">
+                <Wrench className="text-amber-400 w-6 h-6" />
+                <h3 className="text-xl font-bold tracking-tight text-white">Tools</h3>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                {['Git', 'Clerk', 'shadcn/ui'].map(skill => (
+                  <Badge key={skill} variant="outline" className="px-4 py-2 text-sm rounded-lg shadow-sm hover:-translate-y-1 transition-all duration-300 bg-gradient-to-r from-slate-900 to-slate-800 text-slate-200 border border-amber-500/30 hover:border-white/60 cursor-default font-semibold tracking-wide">
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 

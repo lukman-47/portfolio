@@ -12,13 +12,13 @@ export default function ProfileFlipper() {
     >
       <div className={`profile-flipper-inner ${isFlipped ? 'flipped' : ''}`}>
         {/* Front: Emoji */}
-        <div className="profile-front shadow-2xl border-4 border-white">
+        <div className="absolute w-full h-full rounded-full shadow-2xl border-4 border-white overflow-hidden [backface-visibility:hidden]">
           <div className="w-full h-full bg-gradient-to-tr from-purple-500 via-purple-400 to-amber-500 flex items-center justify-center text-6xl">
              👨‍💻
           </div>
         </div>
         {/* Back: Photo */}
-        <div className="profile-back shadow-2xl border-4 border-white">
+        <div className="absolute w-full h-full rounded-full shadow-2xl border-4 border-white overflow-hidden [backface-visibility:hidden] [transform:rotateY(180deg)]">
           <img 
             src="/profile.jpg" 
             alt="Lukman" 
