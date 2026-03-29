@@ -1,11 +1,9 @@
+@import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-@tailwind base;
-
 @custom-variant dark (&:is(.dark *));
-@tailwind components;
-@tailwind utilities;
+
 
 body {
   margin: 0;
@@ -62,6 +60,13 @@ a {
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+
+  --animate-bounce-subtle: bounce-subtle 3s ease-in-out infinite;
+
+  @keyframes bounce-subtle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
 }
 
 :root {
@@ -142,5 +147,72 @@ a {
   }
   html {
     @apply font-sans;
+  }
+}
+
+@layer utilities {
+  .animate-falling-star {
+    animation: falling-star 6s infinite ease-in;
+  }
+  .animate-shooting-star {
+    animation-name: shooting-star;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+  }
+}
+
+@keyframes falling-star {
+  0% {
+    transform: translate(0, 0) rotate(45deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-1000px, 1000px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes shooting-star {
+  0% {
+    transform: translate(0, 0) rotate(-45deg);
+    opacity: 0;
+  }
+  3% {
+    opacity: 1;
+  }
+  12% {
+    opacity: 1;
+  }
+  20% {
+    transform: translate(-1500px, 800px) rotate(-45deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-1500px, 800px) rotate(-45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes falling-star-vertical {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
   }
 }
