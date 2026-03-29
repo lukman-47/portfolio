@@ -346,7 +346,7 @@ export default async function Portfolio() {
 
           <div className="flex flex-wrap gap-4 justify-center">
             {skills.map((skill: any) => (
-              <Badge key={skill._id.toString()} variant="secondary" className="px-6 py-3 text-base rounded-full shadow-md hover:scale-110 transition-transform bg-purple-900/40 text-purple-200 hover:bg-purple-800/50 border-purple-700/50 cursor-default font-semibold">
+              <Badge key={skill._id.toString()} variant="outline" className="px-5 py-2.5 md:px-6 md:py-3 text-sm md:text-base rounded-full shadow-lg hover:-translate-y-1 transition-all duration-300 bg-gradient-to-r from-slate-900 to-slate-800 text-slate-100 border border-purple-500/30 hover:border-amber-400/60 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] cursor-default font-bold tracking-wide">
                 {skill.name}
               </Badge>
             ))}
@@ -356,7 +356,7 @@ export default async function Portfolio() {
         {/* Projects Section */}
         <section id="projects" className="space-y-16 reveal animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-500 fill-mode-both scroll-mt-32 px-4 max-w-7xl mx-auto">
           <div className="text-center space-y-4">
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight flex items-center justify-center gap-4 text-white">
+            <h2 className="text-3xl md:text-5xl font-black tracking-tight flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-white text-center leading-tight">
               <span className="h-px w-12 bg-purple-500 hidden md:block"></span>
               Featured Projects
               <span className="h-px w-12 bg-purple-500 hidden md:block"></span>
@@ -450,8 +450,8 @@ export default async function Portfolio() {
         {/* Certificates Section */}
         <section id="certificates" className="space-y-12 reveal animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-700 fill-mode-both scroll-mt-32 max-w-6xl mx-auto">
           <div className="text-center space-y-4">
-            <h2 className="text-4xl font-black tracking-tight flex items-center justify-center gap-3 text-white">
-              <Award className="text-purple-500" size={36} />
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight flex flex-col md:flex-row items-center justify-center gap-2 md:gap-3 text-white text-center leading-tight">
+              <Award className="text-purple-500 mb-1 md:mb-0" size={36} />
               Professional Certifications
             </h2>
             <p className="text-lg text-slate-400 font-medium italic">Validated expertise across major cloud and AI platforms.</p>

@@ -50,10 +50,10 @@ export function JourneyMilestone({ year, school, description, logo, color, rever
     <div className={`relative flex ${mobileLayout} md:flex-col items-center justify-center w-full md:w-auto md:min-w-[220px] md:h-full md:flex-1 group cursor-default transition-all duration-300 z-10`}>
       {/* Circle / Bead on the String */}
       <div 
-        className={`z-50 bg-white p-2 rounded-full border-4 ${colors[color].border} shadow-2xl relative h-16 w-16 md:h-24 md:w-24 flex items-center justify-center transition-all duration-500 group-hover:scale-110 cursor-pointer`}
+        className={`z-50 bg-white p-2 rounded-full border-4 ${colors[color].border} shadow-2xl relative h-16 w-16 md:h-24 md:w-24 flex items-center justify-center transition-all duration-500 md:group-hover:scale-110 cursor-pointer`}
         onClick={() => setShowLogo(!showLogo)}
       >
-        <GraduationCap className={`w-8 h-8 md:w-12 md:h-12 absolute z-0 transition-opacity duration-500 ${colors[color].muted} ${showLogo ? 'opacity-0' : 'opacity-100 group-hover:opacity-0'}`} />
+        <GraduationCap className={`w-8 h-8 md:w-12 md:h-12 absolute z-0 transition-opacity duration-500 ${colors[color].muted} ${showLogo ? 'opacity-0' : 'opacity-100 md:group-hover:opacity-0'}`} />
         <img 
           src={logo} 
           alt={school} 
@@ -72,12 +72,12 @@ export function JourneyMilestone({ year, school, description, logo, color, rever
         onClick={() => setShowLogo(!showLogo)}
       >
         {/* Connector Line - Hidden on Mobile */}
-        <div className={`hidden md:block w-1.5 h-16 ${gradient} ${colors[color].from} to-transparent opacity-40 group-hover:opacity-100 group-hover:h-24 transition-all duration-500`} />
+        <div className={`hidden md:block w-1.5 h-16 ${gradient} ${colors[color].from} to-transparent opacity-40 md:group-hover:opacity-100 md:group-hover:h-24 transition-all duration-500`} />
         
         {/* Text Content */}
         <div className={`space-y-1 ${reverse ? 'md:mb-4' : 'md:mt-4'} md:text-center`}>
           <time className={`text-base font-bold ${colors[color].text}`}>{year}</time>
-          <h3 className={`text-xl font-black text-slate-900 leading-tight transition-colors group-hover:${colors[color].text}`}>
+          <h3 className={`text-xl font-black text-slate-900 leading-tight transition-colors md:group-hover:${colors[color].text}`}>
             {school}
           </h3>
           <p className="text-sm text-slate-500 font-bold uppercase tracking-tight leading-none overflow-visible">{description}</p>
