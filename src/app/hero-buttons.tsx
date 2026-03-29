@@ -64,7 +64,7 @@ export default function DynamicIsland() {
                 <motion.div animate={wiggleAnimation} transition={{ delay: idx * 0.1 }}>
                   <div className="text-white/60 group-hover:text-purple-400 transition-colors">
                     {/* Tiny icons for mobile to ensure fit */}
-                    <div className="scale-[0.55] md:scale-100">
+                    <div className="scale-90 md:scale-100">
                       {nav.icon}
                     </div>
                   </div>
@@ -82,7 +82,7 @@ export default function DynamicIsland() {
           <motion.div variants={item} whileHover={{ scale: 1.2, y: -4 }}>
             <Link href="https://github.com/lukman-47" target="_blank" className="flex flex-col items-center gap-1 group relative">
               <motion.div animate={wiggleAnimation}>
-                <div className="scale-[0.55] md:scale-100">
+                <div className="scale-90 md:scale-100">
                   <GithubIcon className="w-5 h-5 text-white/60 group-hover:text-purple-400 transition-colors" />
                 </div>
               </motion.div>
@@ -93,7 +93,7 @@ export default function DynamicIsland() {
           <motion.div variants={item} whileHover={{ scale: 1.2, y: -4 }}>
             <Link href="https://www.linkedin.com/in/lukman47/" target="_blank" className="flex flex-col items-center gap-1 group relative">
               <motion.div animate={wiggleAnimation} transition={{ delay: 0.2 }}>
-                <div className="scale-[0.55] md:scale-100">
+                <div className="scale-90 md:scale-100">
                   <LinkedinIcon className="w-5 h-5 text-white/60 group-hover:text-purple-400 transition-colors" />
                 </div>
               </motion.div>
@@ -102,9 +102,9 @@ export default function DynamicIsland() {
           </motion.div>
 
           <motion.div variants={item} whileHover={{ scale: 1.2, y: -4 }}>
-            <Link href="mailto:lukmanshaikh.official@gmail.com" className="flex flex-col items-center gap-1 group relative">
+            <Link href="mailto:lukman439026@gmail.com" className="flex flex-col items-center gap-1 group relative">
               <motion.div animate={wiggleAnimation} transition={{ delay: 0.4 }}>
-                <div className="scale-[0.55] md:scale-100">
+                <div className="scale-90 md:scale-100">
                   <MailIcon className="w-5 h-5 text-white/60 group-hover:text-purple-400 transition-colors" />
                 </div>
               </motion.div>
@@ -113,9 +113,9 @@ export default function DynamicIsland() {
           </motion.div>
 
           <motion.div variants={item} whileHover={{ scale: 1.2, y: -4 }}>
-            <Link href="https://www.instagram.com/lukman_shaikh_47/" target="_blank" className="flex flex-col items-center gap-1 group relative">
+            <Link href="https://www.instagram.com/lukmanshaikh_47/" target="_blank" className="flex flex-col items-center gap-1 group relative">
               <motion.div animate={wiggleAnimation} transition={{ delay: 0.6 }}>
-                <div className="scale-[0.55] md:scale-100">
+                <div className="scale-90 md:scale-100">
                   <InstagramIcon className="w-5 h-5 text-white/60 group-hover:text-purple-400 transition-colors" />
                 </div>
               </motion.div>

@@ -39,7 +39,11 @@ export default function ProfileFlipper() {
           transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
           transform-style: preserve-3d;
         }
-        .profile-flipper:hover .profile-flipper-inner,
+        @media (hover: hover) {
+          .profile-flipper:hover .profile-flipper-inner {
+            transform: rotateY(180deg);
+          }
+        }
         .profile-flipper-inner.flipped {
           transform: rotateY(180deg);
         }
