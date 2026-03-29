@@ -290,9 +290,22 @@ export default async function Portfolio() {
         </div>
       </div>
 
+      {/* Premium Text Logo */}
+      <div className="fixed top-8 left-6 md:top-10 md:left-12 z-[110]">
+        <Link href="#top" className="text-2xl md:text-3xl font-black tracking-tighter flex items-center gap-1 group drop-shadow-lg">
+          <span className="text-purple-500 group-hover:-translate-x-1 transition-transform duration-300">&lt;</span>
+          <span className="text-slate-100 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-amber-400 transition-all duration-500 pb-1">
+            LUKMAN
+          </span>
+          <span className="text-purple-500 group-hover:translate-x-1 transition-transform duration-300">/&gt;</span>
+        </Link>
+      </div>
+
       {/* The Dynamic Island now serves as the primary navigation bar */}
-      <div className="fixed top-4 left-0 right-0 z-[100] px-4">
-        <DynamicIsland />
+      <div className="fixed top-4 left-0 right-0 z-[100] px-4 pointer-events-none flex justify-center">
+        <div className="pointer-events-auto w-full flex justify-center">
+          <DynamicIsland />
+        </div>
       </div>
 
       <main className="container mx-auto px-4 md:px-8 py-24 space-y-48">
