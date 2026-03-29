@@ -80,7 +80,7 @@ export default async function Portfolio() {
   const rightProjects = projects.filter((_: any, i: number) => i % 2 !== 0);
 
   return (
-    <div id="top" className="min-h-screen bg-[#05071a] text-slate-50 relative overflow-hidden scroll-smooth animate-in fade-in zoom-in-[0.98] duration-1000 ease-out fill-mode-forwards">
+    <div id="top" className="min-h-screen bg-[#05071a] text-slate-50 relative overflow-hidden scroll-smooth">
       {/* Cinematic Milky Way Night Sky */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden select-none">
         
@@ -354,12 +354,12 @@ export default async function Portfolio() {
         </div>
       </div>
 
-      <main className="container mx-auto px-4 md:px-8 py-24 space-y-48">
+      <main className="container mx-auto px-4 md:px-8 py-24 space-y-48 animate-in fade-in zoom-in-[0.98] duration-1000 ease-out fill-mode-forwards">
         {/* Hero Section */}
-        <section className="flex flex-col items-center text-center space-y-8 animate-in slide-in-from-bottom-8 fade-in duration-1000 mt-20 md:mt-24">
+        <section className="flex flex-col items-center text-center space-y-8 mt-20 md:mt-24">
           <ProfileFlipper />
           <div className="space-y-4">
-            <h1 className="text-5xl md:text-7xl font-black tracking-tighter leading-tight text-white">
+            <h1 className="text-[2.6rem] leading-[1.1] sm:text-5xl md:text-7xl font-black tracking-tighter text-white">
               Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-300 to-amber-300">Lukman</span>.
             </h1>
             <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto font-medium leading-relaxed">

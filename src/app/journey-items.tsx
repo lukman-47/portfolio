@@ -56,7 +56,7 @@ export function JourneyMilestone({ year, school, description, logo, color, rever
       >
         {active && (
           <div 
-            className="absolute top-0 right-0 md:-top-0.5 md:-right-0.5 z-[60] w-2.5 h-2.5 md:w-3.5 md:h-3.5 bg-green-500 rounded-full border-[1.5px] border-white animate-pulse shadow-[0_0_6px_rgba(34,197,94,0.8)]" 
+            className="absolute top-1 right-1 md:top-1.5 md:right-1.5 z-[60] w-2.5 h-2.5 md:w-3.5 md:h-3.5 bg-green-500 rounded-full border-[1.5px] border-white animate-pulse shadow-[0_0_6px_rgba(34,197,94,0.8)]" 
             style={{ animationDuration: '600ms' }}
           />
         )}
