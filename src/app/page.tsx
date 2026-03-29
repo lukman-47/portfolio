@@ -313,7 +313,7 @@ export default async function Portfolio() {
           animation: royal-shine 4s linear infinite;
         }
       `}</style>
-      <div className="fixed top-6 left-4 md:top-8 md:left-8 z-[110] select-none">
+      <div className="absolute top-6 left-4 md:top-8 md:left-8 z-[110] select-none">
         <Link href="#top" className="group relative block px-3 py-2">
           {/* Subtle Outer Glow */}
           <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-amber-500/10 to-transparent blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000 rounded-full" />
