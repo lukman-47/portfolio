@@ -53,11 +53,11 @@ export function JourneyMilestone({ year, school, description, logo, color, rever
         className={`z-50 bg-white p-2 rounded-full border-4 ${colors[color].border} shadow-2xl relative h-16 w-16 md:h-24 md:w-24 flex items-center justify-center transition-all duration-500 md:group-hover:scale-110 cursor-pointer`}
         onClick={() => setShowLogo(!showLogo)}
       >
-        <GraduationCap className={`w-8 h-8 md:w-12 md:h-12 absolute z-0 transition-opacity duration-500 ${colors[color].muted} ${showLogo ? 'opacity-0' : 'opacity-100 md:group-hover:opacity-0'}`} />
+        <GraduationCap className={`w-8 h-8 md:w-12 md:h-12 absolute z-0 transition-opacity duration-500 ${colors[color].muted} ${showLogo ? 'opacity-0' : 'opacity-0 md:opacity-100 md:group-hover:opacity-0'}`} />
         <img 
           src={logo} 
           alt={school} 
-          className={`w-12 h-12 md:w-16 md:h-16 object-contain rounded-full transition-all duration-500 relative z-10 bg-white ${showLogo ? 'opacity-100 scale-100' : 'opacity-0 md:group-hover:opacity-100 md:group-hover:scale-100'}`} 
+          className={`w-12 h-12 md:w-16 md:h-16 object-contain rounded-full transition-all duration-500 relative z-10 bg-white ${showLogo ? 'opacity-100 scale-100' : 'opacity-100 scale-100 md:opacity-0 md:scale-95 md:group-hover:opacity-100 md:group-hover:scale-100'}`} 
         />
       </div>
 
