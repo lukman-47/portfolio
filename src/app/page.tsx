@@ -326,18 +326,22 @@ export default async function Portfolio() {
         }
       `}</style>
       <div className="absolute top-6 left-4 md:top-8 md:left-8 z-[110] select-none">
-        <Link href="#top" className="group relative block px-3 py-2">
+        <Link href="#top" className="group relative flex items-center gap-3 px-3 py-2">
           {/* Subtle Outer Glow */}
           <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-amber-500/10 to-transparent blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000 rounded-full" />
           
+          <div className="relative h-10 w-10 md:h-12 md:w-12 group-hover:scale-110 transition-transform duration-500">
+             <img src="/logo-lukman.png" alt="Logo" className="w-full h-full object-contain filter drop-shadow-[0_0_8px_rgba(168,85,247,0.5)]" />
+          </div>
+
           <div className="relative flex flex-col">
-            <h1 className="text-[22px] md:text-3xl font-black tracking-tighter whitespace-nowrap flex items-center">
+            <h1 className="text-[20px] md:text-2xl font-black tracking-tighter whitespace-nowrap flex items-center">
               {/* LUKMAN with continuous royal shine */}
-              <span className="uppercase text-royal-shine drop-shadow-[0_2px_15px_rgba(251,191,36,0.3)] group-hover:scale-105 transition-transform duration-500 origin-left">
+              <span className="uppercase text-royal-shine drop-shadow-[0_2px_15px_rgba(251,191,36,0.3)] origin-left">
                 LUKMAN
               </span>
               {/* SHAIKH in elegant serif gold */}
-              <span className="ml-2 font-serif italic text-lg md:text-[26px] text-amber-200/90 font-medium tracking-wide group-hover:scale-105 transition-transform duration-500 delay-100 origin-left drop-shadow-md">
+              <span className="ml-2 font-serif italic text-lg md:text-2xl text-amber-200/90 font-medium tracking-wide origin-left drop-shadow-md">
                 Shaikh
               </span>
             </h1>

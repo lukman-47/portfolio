@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Lukman Shaikh - Portfolio",
   description: "Personal portfolio of Lukman Shaikh",
+  icons: {
+    icon: "/logo-lukman.png",
+  },
 };
 
 export default function RootLayout({
