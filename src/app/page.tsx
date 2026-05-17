@@ -528,16 +528,55 @@ export default async function Portfolio() {
             <p className="text-xl text-slate-400 font-medium">Some of my most impactful works.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
+          {/* Mobile Layout (Sequential order) */}
+          <div className="flex flex-col gap-8 md:hidden">
+            {projects.map((project: any, index: number) => {
+              const isCyan = index % 2 !== 0;
+              return (
+                <Card key={project._id.toString()} className="group relative border-none bg-transparent overflow-visible shadow-none">
+                  <div className={`absolute -inset-0.5 bg-gradient-to-br ${isCyan ? 'from-cyan-500 to-purple-500' : 'from-purple-500 to-amber-500'} rounded-[2rem] opacity-0 group-hover:opacity-100 blur-md transition duration-500`} />
+                  <div className="relative overflow-hidden rounded-[2rem] bg-slate-950 border border-slate-800 transition-all duration-500 h-full flex flex-col group-hover:border-transparent">
+                    {/* Image Container */}
+                    <div className="relative aspect-video w-full overflow-hidden bg-slate-900 shrink-0 border-b border-slate-800">
+                      {project.image ? (
+                        <div className="absolute inset-0 bg-cover bg-top transform group-hover:scale-105 transition-transform duration-700" style={{ backgroundImage: `url(${project.image})` }} />
+                      ) : (
+                        <div className="absolute inset-0 flex items-center justify-center p-8">
+                          <div className={`w-20 h-20 rounded-2xl flex items-center justify-center border-2 group-hover:scale-110 transition-transform duration-500 ${isCyan ? 'bg-cyan-900/30 border-cyan-500/30 shadow-[0_0_30px_rgba(6,182,212,0.2)]' : 'bg-purple-900/30 border-purple-500/30 shadow-[0_0_30px_rgba(168,85,247,0.2)]'}`}>
+                            <ExternalLink className={`${isCyan ? 'text-cyan-400' : 'text-purple-400'} w-8 h-8`} />
+                          </div>
+                        </div>
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent opacity-60" />
+                    </div>
+                    {/* Content */}
+                    <div className="relative p-6 flex flex-col flex-1 bg-slate-950/80 backdrop-blur-sm z-10">
+                       <h3 className="text-white text-2xl font-black uppercase tracking-tighter drop-shadow-md">{project.title}</h3>
+                       <p className="text-slate-400 text-sm font-medium mt-2 leading-relaxed flex-1">{project.description}</p>
+                       <div className="mt-6 flex items-center justify-between border-t border-slate-800/50 pt-5">
+                         {project.link && (
+                           <Link href={project.link} target="_blank" className="inline-flex items-center gap-2 text-white font-black hover:gap-4 transition-all duration-300 group/btn bg-white/10 hover:bg-white/20 px-5 py-2.5 rounded-full text-xs uppercase tracking-widest backdrop-blur-md">
+                             Explore <ExternalLink size={16} className={`transition-colors ${isCyan ? 'group-hover/btn:text-cyan-400' : 'group-hover/btn:text-amber-400'}`} />
+                           </Link>
+                         )}
+                       </div>
+                    </div>
+                  </div>
+                </Card>
+              );
+            })}
+          </div>
+
+          {/* Desktop Layout (Masonry 2-column) */}
+          <div className="hidden md:grid md:grid-cols-2 gap-12 lg:gap-20">
             {/* Left Column */}
             <div className="space-y-12 lg:space-y-24">
               {leftProjects.map((project: any) => (
                 <Card key={project._id.toString()} className="group relative border-none bg-transparent overflow-visible shadow-none">
                   <div className="absolute -inset-0.5 bg-gradient-to-br from-purple-500 to-amber-500 rounded-[2.5rem] opacity-0 group-hover:opacity-100 blur-md transition duration-500" />
-                  
-                  <div className="relative overflow-hidden rounded-[2.5rem] bg-slate-950 aspect-[4/3] border border-slate-800 transition-all duration-500 h-full flex flex-col group-hover:border-transparent">
+                  <div className="relative overflow-hidden rounded-[2.5rem] bg-slate-950 border border-slate-800 transition-all duration-500 h-full flex flex-col group-hover:border-transparent">
                     {/* Image Container */}
-                    <div className="relative h-2/3 overflow-hidden bg-slate-900">
+                    <div className="relative aspect-[16/10] overflow-hidden bg-slate-900 shrink-0">
                       {project.image ? (
                         <div className="absolute inset-0 bg-cover bg-top transform group-hover:scale-105 transition-transform duration-700" style={{ backgroundImage: `url(${project.image})` }} />
                       ) : (
@@ -547,14 +586,13 @@ export default async function Portfolio() {
                           </div>
                         </div>
                       )}
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
                     </div>
-                    
                     {/* Content */}
-                    <div className="relative p-8 flex flex-col flex-1 justify-end bg-slate-950/80 backdrop-blur-sm -mt-12">
+                    <div className="relative p-8 flex flex-col flex-1 bg-slate-950/80 backdrop-blur-sm z-10 border-t border-slate-800/50">
                        <h3 className="text-white text-3xl font-black uppercase tracking-tighter drop-shadow-md">{project.title}</h3>
-                       <p className="text-slate-400 text-base font-medium mt-3 line-clamp-3 leading-relaxed">{project.description}</p>
-                       <div className="mt-6 flex items-center justify-between border-t border-slate-800 pt-6">
+                       <p className="text-slate-400 text-base font-medium mt-3 leading-relaxed flex-1">{project.description}</p>
+                       <div className="mt-6 flex items-center justify-between border-t border-slate-800/50 pt-6">
                          {project.link && (
                            <Link href={project.link} target="_blank" className="inline-flex items-center gap-3 text-white font-black hover:gap-5 transition-all duration-300 group/btn bg-white/10 hover:bg-white/20 px-6 py-3 rounded-full text-sm uppercase tracking-widest backdrop-blur-md">
                              Explore <ExternalLink size={18} className="group-hover/btn:text-amber-400 transition-colors" />
@@ -572,10 +610,9 @@ export default async function Portfolio() {
               {rightProjects.map((project: any) => (
                 <Card key={project._id.toString()} className="group relative border-none bg-transparent overflow-visible shadow-none">
                   <div className="absolute -inset-0.5 bg-gradient-to-br from-cyan-500 to-purple-500 rounded-[2.5rem] opacity-0 group-hover:opacity-100 blur-md transition duration-500" />
-                  
-                  <div className="relative overflow-hidden rounded-[2.5rem] bg-slate-950 aspect-[4/3] border border-slate-800 transition-all duration-500 h-full flex flex-col group-hover:border-transparent">
+                  <div className="relative overflow-hidden rounded-[2.5rem] bg-slate-950 border border-slate-800 transition-all duration-500 h-full flex flex-col group-hover:border-transparent">
                     {/* Image Container */}
-                    <div className="relative h-2/3 overflow-hidden bg-slate-900">
+                    <div className="relative aspect-[16/10] overflow-hidden bg-slate-900 shrink-0">
                       {project.image ? (
                         <div className="absolute inset-0 bg-cover bg-top transform group-hover:scale-105 transition-transform duration-700" style={{ backgroundImage: `url(${project.image})` }} />
                       ) : (
@@ -585,14 +622,13 @@ export default async function Portfolio() {
                           </div>
                         </div>
                       )}
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
                     </div>
-                    
                     {/* Content */}
-                    <div className="relative p-8 flex flex-col flex-1 justify-end bg-slate-950/80 backdrop-blur-sm -mt-12">
+                    <div className="relative p-8 flex flex-col flex-1 bg-slate-950/80 backdrop-blur-sm z-10 border-t border-slate-800/50">
                        <h3 className="text-white text-3xl font-black uppercase tracking-tighter drop-shadow-md">{project.title}</h3>
-                       <p className="text-slate-400 text-base font-medium mt-3 line-clamp-3 leading-relaxed">{project.description}</p>
-                       <div className="mt-6 flex items-center justify-between border-t border-slate-800 pt-6">
+                       <p className="text-slate-400 text-base font-medium mt-3 leading-relaxed flex-1">{project.description}</p>
+                       <div className="mt-6 flex items-center justify-between border-t border-slate-800/50 pt-6">
                          {project.link && (
                            <Link href={project.link} target="_blank" className="inline-flex items-center gap-3 text-white font-black hover:gap-5 transition-all duration-300 group/btn bg-white/10 hover:bg-white/20 px-6 py-3 rounded-full text-sm uppercase tracking-widest backdrop-blur-md">
                              Explore <ExternalLink size={18} className="group-hover/btn:text-cyan-400 transition-colors" />

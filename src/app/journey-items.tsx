@@ -84,10 +84,10 @@ export function JourneyMilestone({ year, school, description, logo, color, rever
         {/* Text Content */}
         <div className={`space-y-1 ${reverse ? 'md:mb-4' : 'md:mt-4'} md:text-center`}>
           <time className={`text-base font-bold ${colors[color].text}`}>{year}</time>
-          <h3 className={`text-xl font-black text-slate-900 leading-tight transition-colors md:group-hover:${colors[color].text}`}>
+          <h3 className={`text-xl font-black text-slate-100 leading-tight transition-colors md:group-hover:${colors[color].text}`}>
             {school}
           </h3>
-          <p className="text-sm text-slate-500 font-bold uppercase tracking-tight leading-none overflow-visible">{description}</p>
+          <p className="text-sm text-slate-400 font-bold uppercase tracking-tight leading-none overflow-visible">{description}</p>
         </div>
       </div>
     </div>
