@@ -69,6 +69,13 @@ export default async function Portfolio() {
       link: '#',
       image: '/task-manager.png'
     },
+    {
+      _id: '7',
+      title: 'QR Code Generator',
+      description: 'A dynamic QR code generator application with live link sharing capabilities, WhatsApp/Call integrations, and robust customization features.',
+      link: 'https://qr-generator-ls.vercel.app/',
+      image: '/qr-generator.png'
+    },
   ];
 
   let skills = fallbackSkills as any;
@@ -417,70 +424,94 @@ export default async function Portfolio() {
         </section>
 
         {/* Skills Section */}
-        <section id="skills" className="space-y-12 max-w-5xl mx-auto reveal animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-300 fill-mode-both scroll-mt-32 px-4">
-          <div className="text-center space-y-2">
-            <h2 className="text-3xl font-bold tracking-tight text-white">Technical Expertise</h2>
-            <p className="text-slate-400 font-medium">Technologies and paradigms I specialize in.</p>
+        <section id="skills" className="space-y-16 max-w-6xl mx-auto reveal animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-300 fill-mode-both scroll-mt-32 px-4">
+          <div className="text-center space-y-4">
+            <h2 className="text-3xl md:text-5xl font-black tracking-tight flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-white text-center leading-tight">
+              <span className="h-px w-12 bg-purple-500 hidden md:block"></span>
+              Technical Expertise
+              <span className="h-px w-12 bg-purple-500 hidden md:block"></span>
+            </h2>
+            <p className="text-xl text-slate-400 font-medium">Technologies and paradigms I specialize in.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Frontend */}
-            <div className="bg-slate-900/40 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 shadow-xl hover:border-purple-500/50 transition-colors">
-              <div className="flex items-center gap-3 mb-6 border-b border-slate-700/50 pb-4">
-                <Code2 className="text-purple-400 w-6 h-6" />
-                <h3 className="text-xl font-bold tracking-tight text-white">Frontend</h3>
-              </div>
-              <div className="flex flex-wrap gap-3">
-                {['React', 'Next.js', 'Tailwind CSS'].map(skill => (
-                  <Badge key={skill} variant="outline" className="px-4 py-2 text-sm rounded-lg shadow-sm hover:-translate-y-1 transition-all duration-300 bg-gradient-to-r from-slate-900 to-slate-800 text-slate-200 border border-purple-500/30 hover:border-amber-400/60 cursor-default font-semibold tracking-wide">
-                    {skill}
-                  </Badge>
-                ))}
-              </div>
-            </div>
-
-            {/* Backend */}
-            <div className="bg-slate-900/40 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 shadow-xl hover:border-emerald-500/50 transition-colors">
-              <div className="flex items-center gap-3 mb-6 border-b border-slate-700/50 pb-4">
-                <Server className="text-emerald-400 w-6 h-6" />
-                <h3 className="text-xl font-bold tracking-tight text-white">Backend</h3>
-              </div>
-              <div className="flex flex-wrap gap-3">
-                {['Node.js', 'Prisma'].map(skill => (
-                  <Badge key={skill} variant="outline" className="px-4 py-2 text-sm rounded-lg shadow-sm hover:-translate-y-1 transition-all duration-300 bg-gradient-to-r from-slate-900 to-slate-800 text-slate-200 border border-emerald-500/30 hover:border-amber-400/60 cursor-default font-semibold tracking-wide">
-                    {skill}
-                  </Badge>
-                ))}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+            {/* Frontend - Wide Bento (8 columns) */}
+            <div className="col-span-1 md:col-span-8 group relative bg-slate-900/40 backdrop-blur-3xl border border-white/10 rounded-[2rem] p-8 md:p-10 hover:border-purple-500/50 transition-colors overflow-hidden shadow-2xl">
+              <div className="absolute top-0 right-0 w-72 h-72 bg-purple-500/20 rounded-full blur-[80px] -mr-10 -mt-10 group-hover:bg-purple-500/30 transition-colors duration-700" />
+              <div className="relative z-10">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-14 h-14 rounded-2xl bg-black/40 border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-500 group-hover:border-purple-500/50 shadow-inner">
+                    <Code2 className="text-purple-400 w-7 h-7" />
+                  </div>
+                  <h3 className="text-3xl font-black tracking-tight text-white">Frontend</h3>
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  {['React', 'Next.js', 'Tailwind CSS', 'TypeScript', 'Framer Motion', 'Redux'].map(skill => (
+                    <span key={skill} className="px-6 py-3 bg-white/5 rounded-full text-white/90 font-semibold text-sm hover:bg-purple-500/20 hover:text-purple-200 hover:scale-105 transition-all duration-300 cursor-default border border-white/5 shadow-sm">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
 
-            {/* Database */}
-            <div className="bg-slate-900/40 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 shadow-xl hover:border-cyan-500/50 transition-colors">
-              <div className="flex items-center gap-3 mb-6 border-b border-slate-700/50 pb-4">
-                <Database className="text-cyan-400 w-6 h-6" />
-                <h3 className="text-xl font-bold tracking-tight text-white">Database</h3>
-              </div>
-              <div className="flex flex-wrap gap-3">
-                {['MongoDB', 'SQL', 'PostgreSQL'].map(skill => (
-                  <Badge key={skill} variant="outline" className="px-4 py-2 text-sm rounded-lg shadow-sm hover:-translate-y-1 transition-all duration-300 bg-gradient-to-r from-slate-900 to-slate-800 text-slate-200 border border-cyan-500/30 hover:border-amber-400/60 cursor-default font-semibold tracking-wide">
-                    {skill}
-                  </Badge>
-                ))}
+            {/* Backend - Narrow Bento (4 columns) */}
+            <div className="col-span-1 md:col-span-4 group relative bg-slate-900/40 backdrop-blur-3xl border border-white/10 rounded-[2rem] p-8 md:p-10 hover:border-emerald-500/50 transition-colors overflow-hidden shadow-2xl">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/20 rounded-full blur-[80px] -mr-10 -mt-10 group-hover:bg-emerald-500/30 transition-colors duration-700" />
+              <div className="relative z-10">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-14 h-14 rounded-2xl bg-black/40 border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-500 group-hover:border-emerald-500/50 shadow-inner">
+                    <Server className="text-emerald-400 w-7 h-7" />
+                  </div>
+                  <h3 className="text-3xl font-black tracking-tight text-white">Backend</h3>
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  {['Node.js', 'Prisma', 'Express', 'JWT'].map(skill => (
+                    <span key={skill} className="px-5 py-2.5 bg-white/5 rounded-full text-white/90 font-semibold text-sm hover:bg-emerald-500/20 hover:text-emerald-200 hover:scale-105 transition-all duration-300 cursor-default border border-white/5 shadow-sm">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
 
-            {/* Tools */}
-            <div className="bg-slate-900/40 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 shadow-xl hover:border-amber-500/50 transition-colors">
-              <div className="flex items-center gap-3 mb-6 border-b border-slate-700/50 pb-4">
-                <Wrench className="text-amber-400 w-6 h-6" />
-                <h3 className="text-xl font-bold tracking-tight text-white">Tools</h3>
+            {/* Database - Medium Bento (5 columns) */}
+            <div className="col-span-1 md:col-span-5 group relative bg-slate-900/40 backdrop-blur-3xl border border-white/10 rounded-[2rem] p-8 md:p-10 hover:border-cyan-500/50 transition-colors overflow-hidden shadow-2xl">
+              <div className="absolute bottom-0 left-0 w-72 h-72 bg-cyan-500/20 rounded-full blur-[80px] -ml-10 -mb-10 group-hover:bg-cyan-500/30 transition-colors duration-700" />
+              <div className="relative z-10">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-14 h-14 rounded-2xl bg-black/40 border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-500 group-hover:border-cyan-500/50 shadow-inner">
+                    <Database className="text-cyan-400 w-7 h-7" />
+                  </div>
+                  <h3 className="text-3xl font-black tracking-tight text-white">Database</h3>
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  {['MongoDB', 'PostgreSQL', 'MySQL', 'Mongoose'].map(skill => (
+                    <span key={skill} className="px-5 py-2.5 bg-white/5 rounded-full text-white/90 font-semibold text-sm hover:bg-cyan-500/20 hover:text-cyan-200 hover:scale-105 transition-all duration-300 cursor-default border border-white/5 shadow-sm">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
-              <div className="flex flex-wrap gap-3">
-                {['Git', 'Clerk', 'shadcn/ui'].map(skill => (
-                  <Badge key={skill} variant="outline" className="px-4 py-2 text-sm rounded-lg shadow-sm hover:-translate-y-1 transition-all duration-300 bg-gradient-to-r from-slate-900 to-slate-800 text-slate-200 border border-amber-500/30 hover:border-white/60 cursor-default font-semibold tracking-wide">
-                    {skill}
-                  </Badge>
-                ))}
+            </div>
+
+            {/* Tools - Wide Bento (7 columns) */}
+            <div className="col-span-1 md:col-span-7 group relative bg-slate-900/40 backdrop-blur-3xl border border-white/10 rounded-[2rem] p-8 md:p-10 hover:border-amber-500/50 transition-colors overflow-hidden shadow-2xl">
+              <div className="absolute bottom-0 right-0 w-72 h-72 bg-amber-500/20 rounded-full blur-[80px] -mr-10 -mb-10 group-hover:bg-amber-500/30 transition-colors duration-700" />
+              <div className="relative z-10">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-14 h-14 rounded-2xl bg-black/40 border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-500 group-hover:border-amber-500/50 shadow-inner">
+                    <Wrench className="text-amber-400 w-7 h-7" />
+                  </div>
+                  <h3 className="text-3xl font-black tracking-tight text-white">Tools & Cloud</h3>
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  {['Git & GitHub', 'Vercel', 'Docker', 'Clerk Auth', 'shadcn/ui', 'Supabase'].map(skill => (
+                    <span key={skill} className="px-5 py-2.5 bg-white/5 rounded-full text-white/90 font-semibold text-sm hover:bg-amber-500/20 hover:text-amber-200 hover:scale-105 transition-all duration-300 cursor-default border border-white/5 shadow-sm">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -501,39 +532,37 @@ export default async function Portfolio() {
             {/* Left Column */}
             <div className="space-y-12 lg:space-y-24">
               {leftProjects.map((project: any) => (
-                <Card key={project._id.toString()} className="group border-none shadow-none bg-transparent hover:transform-none transition-all relative">
-                  <div className="relative overflow-hidden rounded-3xl bg-slate-900 aspect-[4/3] group-hover:shadow-[0_30px_60px_-15px_rgba(147,51,234,0.3)] transition-all duration-500 border-2 border-slate-700 group-hover:border-purple-500/50">
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                    {project.image ? (
-                      <div className="absolute inset-0 bg-cover bg-top transform group-hover:scale-105 transition-transform duration-700" style={{ backgroundImage: `url(${project.image})` }} />
-                    ) : (
-                      <div className="absolute inset-0 flex items-center justify-center p-8">
-                        <div className="w-full h-full rounded-2xl bg-slate-800 shadow-lg flex items-center justify-center overflow-hidden border-2 border-slate-700 relative">
-                          <div className="absolute inset-0 bg-slate-900 opacity-50" />
-                          <div className="z-10 text-center p-6">
-                            <div className="w-16 h-16 bg-purple-900/50 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                              <ExternalLink className="text-purple-400" size={32} />
-                            </div>
+                <Card key={project._id.toString()} className="group relative border-none bg-transparent overflow-visible shadow-none">
+                  <div className="absolute -inset-0.5 bg-gradient-to-br from-purple-500 to-amber-500 rounded-[2.5rem] opacity-0 group-hover:opacity-100 blur-md transition duration-500" />
+                  
+                  <div className="relative overflow-hidden rounded-[2.5rem] bg-slate-950 aspect-[4/3] border border-slate-800 transition-all duration-500 h-full flex flex-col group-hover:border-transparent">
+                    {/* Image Container */}
+                    <div className="relative h-2/3 overflow-hidden bg-slate-900">
+                      {project.image ? (
+                        <div className="absolute inset-0 bg-cover bg-top transform group-hover:scale-105 transition-transform duration-700" style={{ backgroundImage: `url(${project.image})` }} />
+                      ) : (
+                        <div className="absolute inset-0 flex items-center justify-center p-8">
+                          <div className="w-24 h-24 bg-purple-900/30 rounded-3xl flex items-center justify-center border-2 border-purple-500/30 group-hover:scale-110 transition-transform duration-500 shadow-[0_0_30px_rgba(168,85,247,0.2)]">
+                            <ExternalLink className="text-purple-400 w-10 h-10" />
                           </div>
                         </div>
-                      </div>
-                    )}
-                    {/* Permanent Premium Title Overlay */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
-                      <h3 className="text-white text-xl md:text-2xl font-black uppercase tracking-tighter drop-shadow-lg">{project.title}</h3>
-                      <p className="text-slate-300 text-sm font-medium opacity-80 mt-1 line-clamp-1">{project.description}</p>
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="relative p-8 flex flex-col flex-1 justify-end bg-slate-950/80 backdrop-blur-sm -mt-12">
+                       <h3 className="text-white text-3xl font-black uppercase tracking-tighter drop-shadow-md">{project.title}</h3>
+                       <p className="text-slate-400 text-base font-medium mt-3 line-clamp-3 leading-relaxed">{project.description}</p>
+                       <div className="mt-6 flex items-center justify-between border-t border-slate-800 pt-6">
+                         {project.link && (
+                           <Link href={project.link} target="_blank" className="inline-flex items-center gap-3 text-white font-black hover:gap-5 transition-all duration-300 group/btn bg-white/10 hover:bg-white/20 px-6 py-3 rounded-full text-sm uppercase tracking-widest backdrop-blur-md">
+                             Explore <ExternalLink size={18} className="group-hover/btn:text-amber-400 transition-colors" />
+                           </Link>
+                         )}
+                       </div>
                     </div>
                   </div>
-                  <CardContent className="pt-6 px-0 pb-0">
-                    <div className="flex items-center justify-between gap-4">
-                      {project.link && (
-                        <Link href={project.link} target="_blank" className="inline-flex items-center gap-2 text-slate-100 font-black hover:gap-4 transition-all duration-300 group/btn">
-                          EXPLORE PROJECT <ExternalLink size={16} className="group-hover/btn:text-purple-400" />
-                        </Link>
-                      )}
-                      <div className="h-px flex-1 bg-slate-800" />
-                    </div>
-                  </CardContent>
                 </Card>
               ))}
             </div>
@@ -541,39 +570,37 @@ export default async function Portfolio() {
             {/* Right Column */}
             <div className="space-y-12 lg:space-y-24 lg:mt-32">
               {rightProjects.map((project: any) => (
-                <Card key={project._id.toString()} className="group border-none shadow-none bg-transparent relative">
-                  <div className="relative overflow-hidden rounded-3xl bg-slate-900 aspect-[4/3] group-hover:shadow-[0_30px_60px_-15px_rgba(147,51,234,0.3)] transition-all duration-500 border-2 border-slate-700 group-hover:border-purple-500/50">
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                    {project.image ? (
-                      <div className="absolute inset-0 bg-cover bg-top transform group-hover:scale-105 transition-transform duration-700" style={{ backgroundImage: `url(${project.image})` }} />
-                    ) : (
-                      <div className="absolute inset-0 flex items-center justify-center p-8">
-                        <div className="w-full h-full rounded-2xl bg-slate-800 shadow-lg flex items-center justify-center overflow-hidden border-2 border-slate-700 relative">
-                          <div className="absolute inset-0 bg-slate-900 opacity-50" />
-                          <div className="z-10 text-center p-6">
-                            <div className="w-16 h-16 bg-purple-900/50 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                              <ExternalLink className="text-purple-400" size={32} />
-                            </div>
+                <Card key={project._id.toString()} className="group relative border-none bg-transparent overflow-visible shadow-none">
+                  <div className="absolute -inset-0.5 bg-gradient-to-br from-cyan-500 to-purple-500 rounded-[2.5rem] opacity-0 group-hover:opacity-100 blur-md transition duration-500" />
+                  
+                  <div className="relative overflow-hidden rounded-[2.5rem] bg-slate-950 aspect-[4/3] border border-slate-800 transition-all duration-500 h-full flex flex-col group-hover:border-transparent">
+                    {/* Image Container */}
+                    <div className="relative h-2/3 overflow-hidden bg-slate-900">
+                      {project.image ? (
+                        <div className="absolute inset-0 bg-cover bg-top transform group-hover:scale-105 transition-transform duration-700" style={{ backgroundImage: `url(${project.image})` }} />
+                      ) : (
+                        <div className="absolute inset-0 flex items-center justify-center p-8">
+                          <div className="w-24 h-24 bg-cyan-900/30 rounded-3xl flex items-center justify-center border-2 border-cyan-500/30 group-hover:scale-110 transition-transform duration-500 shadow-[0_0_30px_rgba(6,182,212,0.2)]">
+                            <ExternalLink className="text-cyan-400 w-10 h-10" />
                           </div>
                         </div>
-                      </div>
-                    )}
-                    {/* Permanent Premium Title Overlay */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
-                      <h3 className="text-white text-xl md:text-2xl font-black uppercase tracking-tighter drop-shadow-lg">{project.title}</h3>
-                      <p className="text-slate-300 text-sm font-medium opacity-80 mt-1 line-clamp-1">{project.description}</p>
+                      )}
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="relative p-8 flex flex-col flex-1 justify-end bg-slate-950/80 backdrop-blur-sm -mt-12">
+                       <h3 className="text-white text-3xl font-black uppercase tracking-tighter drop-shadow-md">{project.title}</h3>
+                       <p className="text-slate-400 text-base font-medium mt-3 line-clamp-3 leading-relaxed">{project.description}</p>
+                       <div className="mt-6 flex items-center justify-between border-t border-slate-800 pt-6">
+                         {project.link && (
+                           <Link href={project.link} target="_blank" className="inline-flex items-center gap-3 text-white font-black hover:gap-5 transition-all duration-300 group/btn bg-white/10 hover:bg-white/20 px-6 py-3 rounded-full text-sm uppercase tracking-widest backdrop-blur-md">
+                             Explore <ExternalLink size={18} className="group-hover/btn:text-cyan-400 transition-colors" />
+                           </Link>
+                         )}
+                       </div>
                     </div>
                   </div>
-                  <CardContent className="pt-6 px-0 pb-0">
-                    <div className="flex items-center justify-between gap-4">
-                      {project.link && (
-                        <Link href={project.link} target="_blank" className="inline-flex items-center gap-2 text-slate-100 font-black hover:gap-4 transition-all duration-300 group/btn">
-                          EXPLORE PROJECT <ExternalLink size={16} className="group-hover/btn:text-purple-400" />
-                        </Link>
-                      )}
-                      <div className="h-px flex-1 bg-slate-800" />
-                    </div>
-                  </CardContent>
                 </Card>
               ))}
             </div>
