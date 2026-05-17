@@ -424,7 +424,7 @@ export default async function Portfolio() {
         </section>
 
         {/* Skills Section */}
-        <section id="skills" className="space-y-16 max-w-6xl mx-auto reveal animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-300 fill-mode-both scroll-mt-32 px-4">
+        <section id="skills" className="space-y-12 max-w-6xl mx-auto reveal animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-300 fill-mode-both scroll-mt-32 px-4">
           <div className="text-center space-y-4">
             <h2 className="text-3xl md:text-5xl font-black tracking-tight flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-white text-center leading-tight">
               <span className="h-px w-12 bg-purple-500 hidden md:block"></span>
@@ -434,20 +434,20 @@ export default async function Portfolio() {
             <p className="text-xl text-slate-400 font-medium">Technologies and paradigms I specialize in.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-            {/* Frontend - Wide Bento (8 columns) */}
-            <div className="col-span-1 md:col-span-8 group relative bg-slate-900/40 backdrop-blur-3xl border border-white/10 rounded-[2rem] p-8 md:p-10 hover:border-purple-500/50 transition-colors overflow-hidden shadow-2xl">
-              <div className="absolute top-0 right-0 w-72 h-72 bg-purple-500/20 rounded-full blur-[80px] -mr-10 -mt-10 group-hover:bg-purple-500/30 transition-colors duration-700" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Frontend */}
+            <div className="group relative bg-slate-900/60 backdrop-blur-md border border-slate-700/50 rounded-3xl p-8 hover:border-purple-500/50 transition-all duration-300 shadow-xl overflow-hidden">
+              <div className="absolute top-0 right-0 w-48 h-48 bg-purple-500/10 rounded-full blur-3xl -mr-10 -mt-10 group-hover:bg-purple-500/20 transition-colors duration-700 pointer-events-none" />
               <div className="relative z-10">
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="w-14 h-14 rounded-2xl bg-black/40 border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-500 group-hover:border-purple-500/50 shadow-inner">
+                  <div className="w-14 h-14 rounded-2xl bg-black/40 border border-slate-700/50 flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-inner">
                     <Code2 className="text-purple-400 w-7 h-7" />
                   </div>
                   <h3 className="text-3xl font-black tracking-tight text-white">Frontend</h3>
                 </div>
                 <div className="flex flex-wrap gap-3">
                   {['React', 'Next.js', 'Tailwind CSS', 'TypeScript', 'Framer Motion', 'Redux'].map(skill => (
-                    <span key={skill} className="px-6 py-3 bg-white/5 rounded-full text-white/90 font-semibold text-sm hover:bg-purple-500/20 hover:text-purple-200 hover:scale-105 transition-all duration-300 cursor-default border border-white/5 shadow-sm">
+                    <span key={skill} className="px-5 py-2.5 bg-slate-800/80 rounded-full text-slate-200 font-semibold text-sm border border-slate-700 hover:border-purple-500/50 hover:bg-purple-500/10 hover:text-purple-200 hover:scale-105 transition-all duration-300 cursor-default shadow-sm">
                       {skill}
                     </span>
                   ))}
@@ -455,19 +455,19 @@ export default async function Portfolio() {
               </div>
             </div>
 
-            {/* Backend - Narrow Bento (4 columns) */}
-            <div className="col-span-1 md:col-span-4 group relative bg-slate-900/40 backdrop-blur-3xl border border-white/10 rounded-[2rem] p-8 md:p-10 hover:border-emerald-500/50 transition-colors overflow-hidden shadow-2xl">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/20 rounded-full blur-[80px] -mr-10 -mt-10 group-hover:bg-emerald-500/30 transition-colors duration-700" />
+            {/* Backend */}
+            <div className="group relative bg-slate-900/60 backdrop-blur-md border border-slate-700/50 rounded-3xl p-8 hover:border-emerald-500/50 transition-all duration-300 shadow-xl overflow-hidden">
+              <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/10 rounded-full blur-3xl -mr-10 -mt-10 group-hover:bg-emerald-500/20 transition-colors duration-700 pointer-events-none" />
               <div className="relative z-10">
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="w-14 h-14 rounded-2xl bg-black/40 border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-500 group-hover:border-emerald-500/50 shadow-inner">
+                  <div className="w-14 h-14 rounded-2xl bg-black/40 border border-slate-700/50 flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-inner">
                     <Server className="text-emerald-400 w-7 h-7" />
                   </div>
                   <h3 className="text-3xl font-black tracking-tight text-white">Backend</h3>
                 </div>
                 <div className="flex flex-wrap gap-3">
                   {['Node.js', 'Prisma', 'Express', 'JWT'].map(skill => (
-                    <span key={skill} className="px-5 py-2.5 bg-white/5 rounded-full text-white/90 font-semibold text-sm hover:bg-emerald-500/20 hover:text-emerald-200 hover:scale-105 transition-all duration-300 cursor-default border border-white/5 shadow-sm">
+                    <span key={skill} className="px-5 py-2.5 bg-slate-800/80 rounded-full text-slate-200 font-semibold text-sm border border-slate-700 hover:border-emerald-500/50 hover:bg-emerald-500/10 hover:text-emerald-200 hover:scale-105 transition-all duration-300 cursor-default shadow-sm">
                       {skill}
                     </span>
                   ))}
@@ -475,19 +475,19 @@ export default async function Portfolio() {
               </div>
             </div>
 
-            {/* Database - Medium Bento (5 columns) */}
-            <div className="col-span-1 md:col-span-5 group relative bg-slate-900/40 backdrop-blur-3xl border border-white/10 rounded-[2rem] p-8 md:p-10 hover:border-cyan-500/50 transition-colors overflow-hidden shadow-2xl">
-              <div className="absolute bottom-0 left-0 w-72 h-72 bg-cyan-500/20 rounded-full blur-[80px] -ml-10 -mb-10 group-hover:bg-cyan-500/30 transition-colors duration-700" />
+            {/* Database */}
+            <div className="group relative bg-slate-900/60 backdrop-blur-md border border-slate-700/50 rounded-3xl p-8 hover:border-cyan-500/50 transition-all duration-300 shadow-xl overflow-hidden">
+              <div className="absolute bottom-0 right-0 w-48 h-48 bg-cyan-500/10 rounded-full blur-3xl -mr-10 -mb-10 group-hover:bg-cyan-500/20 transition-colors duration-700 pointer-events-none" />
               <div className="relative z-10">
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="w-14 h-14 rounded-2xl bg-black/40 border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-500 group-hover:border-cyan-500/50 shadow-inner">
+                  <div className="w-14 h-14 rounded-2xl bg-black/40 border border-slate-700/50 flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-inner">
                     <Database className="text-cyan-400 w-7 h-7" />
                   </div>
                   <h3 className="text-3xl font-black tracking-tight text-white">Database</h3>
                 </div>
                 <div className="flex flex-wrap gap-3">
                   {['MongoDB', 'PostgreSQL', 'MySQL', 'Mongoose'].map(skill => (
-                    <span key={skill} className="px-5 py-2.5 bg-white/5 rounded-full text-white/90 font-semibold text-sm hover:bg-cyan-500/20 hover:text-cyan-200 hover:scale-105 transition-all duration-300 cursor-default border border-white/5 shadow-sm">
+                    <span key={skill} className="px-5 py-2.5 bg-slate-800/80 rounded-full text-slate-200 font-semibold text-sm border border-slate-700 hover:border-cyan-500/50 hover:bg-cyan-500/10 hover:text-cyan-200 hover:scale-105 transition-all duration-300 cursor-default shadow-sm">
                       {skill}
                     </span>
                   ))}
@@ -495,19 +495,19 @@ export default async function Portfolio() {
               </div>
             </div>
 
-            {/* Tools - Wide Bento (7 columns) */}
-            <div className="col-span-1 md:col-span-7 group relative bg-slate-900/40 backdrop-blur-3xl border border-white/10 rounded-[2rem] p-8 md:p-10 hover:border-amber-500/50 transition-colors overflow-hidden shadow-2xl">
-              <div className="absolute bottom-0 right-0 w-72 h-72 bg-amber-500/20 rounded-full blur-[80px] -mr-10 -mb-10 group-hover:bg-amber-500/30 transition-colors duration-700" />
+            {/* Tools */}
+            <div className="group relative bg-slate-900/60 backdrop-blur-md border border-slate-700/50 rounded-3xl p-8 hover:border-amber-500/50 transition-all duration-300 shadow-xl overflow-hidden">
+              <div className="absolute bottom-0 right-0 w-48 h-48 bg-amber-500/10 rounded-full blur-3xl -mr-10 -mb-10 group-hover:bg-amber-500/20 transition-colors duration-700 pointer-events-none" />
               <div className="relative z-10">
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="w-14 h-14 rounded-2xl bg-black/40 border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-500 group-hover:border-amber-500/50 shadow-inner">
+                  <div className="w-14 h-14 rounded-2xl bg-black/40 border border-slate-700/50 flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-inner">
                     <Wrench className="text-amber-400 w-7 h-7" />
                   </div>
                   <h3 className="text-3xl font-black tracking-tight text-white">Tools & Cloud</h3>
                 </div>
                 <div className="flex flex-wrap gap-3">
                   {['Git & GitHub', 'Vercel', 'Docker', 'Clerk Auth', 'shadcn/ui', 'Supabase'].map(skill => (
-                    <span key={skill} className="px-5 py-2.5 bg-white/5 rounded-full text-white/90 font-semibold text-sm hover:bg-amber-500/20 hover:text-amber-200 hover:scale-105 transition-all duration-300 cursor-default border border-white/5 shadow-sm">
+                    <span key={skill} className="px-5 py-2.5 bg-slate-800/80 rounded-full text-slate-200 font-semibold text-sm border border-slate-700 hover:border-amber-500/50 hover:bg-amber-500/10 hover:text-amber-200 hover:scale-105 transition-all duration-300 cursor-default shadow-sm">
                       {skill}
                     </span>
                   ))}
