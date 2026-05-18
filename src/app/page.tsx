@@ -38,7 +38,7 @@ export default async function Portfolio() {
       _id: '2',
       title: 'AI Blog Writing Assistant',
       description: 'Streamlined content creation using LLMs. Features Streamlit UI, Hugging Face models, Groq API, and Whisper API for voice-to-text input.',
-      link: '#',
+      link: 'https://ai-artical-ganerator-by-ls.streamlit.app',
       image: '/ai-assistant.png'
     },
     {
@@ -90,7 +90,7 @@ export default async function Portfolio() {
     <div id="top" className="min-h-screen bg-[#05071a] text-slate-50 relative overflow-hidden scroll-smooth">
       {/* Cinematic Milky Way Night Sky */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden select-none">
-        
+
         {/* Mobile Star Scaling CSS */}
         <style>{`
           @media (max-width: 768px) {
@@ -336,25 +336,25 @@ export default async function Portfolio() {
         <Link href="#top" className="group relative flex items-center gap-3 px-3 py-2">
           {/* Subtle Outer Glow */}
           <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-amber-500/10 to-transparent blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000 rounded-full" />
-          
+
           <div className="relative h-10 w-10 md:h-12 md:w-12 group-hover:scale-110 transition-transform duration-500 flex items-center justify-center">
-             <svg width="48" height="48" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full drop-shadow-[0_0_12px_rgba(0,102,255,0.4)]">
-               <defs>
-                 <linearGradient id="tech-ls-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                   <stop offset="0%" style={{stopColor:'#2563EB', stopOpacity:1}} />
-                   <stop offset="100%" style={{stopColor:'#06B6D4', stopOpacity:1}} />
-                 </linearGradient>
-               </defs>
-               {/* Technical L-shape */}
-               <path d="M22 28V72H52" stroke="url(#tech-ls-grad)" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" />
-               <circle cx="22" cy="28" r="4" fill="white" stroke="url(#tech-ls-grad)" strokeWidth="1.5" />
-               
-               {/* Technical S-shape interlocking */}
-               <path d="M78 35H48V50H78V65H48" stroke="url(#tech-ls-grad)" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" />
-               <circle cx="78" cy="35" r="4" fill="white" stroke="url(#tech-ls-grad)" strokeWidth="1.5" />
-               <circle cx="48" cy="65" r="4" fill="white" stroke="url(#tech-ls-grad)" strokeWidth="1.5" />
-               <circle cx="52" cy="72" r="4" fill="url(#tech-ls-grad)" />
-             </svg>
+            <svg width="48" height="48" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full drop-shadow-[0_0_12px_rgba(0,102,255,0.4)]">
+              <defs>
+                <linearGradient id="tech-ls-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style={{ stopColor: '#2563EB', stopOpacity: 1 }} />
+                  <stop offset="100%" style={{ stopColor: '#06B6D4', stopOpacity: 1 }} />
+                </linearGradient>
+              </defs>
+              {/* Technical L-shape */}
+              <path d="M22 28V72H52" stroke="url(#tech-ls-grad)" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" />
+              <circle cx="22" cy="28" r="4" fill="white" stroke="url(#tech-ls-grad)" strokeWidth="1.5" />
+
+              {/* Technical S-shape interlocking */}
+              <path d="M78 35H48V50H78V65H48" stroke="url(#tech-ls-grad)" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" />
+              <circle cx="78" cy="35" r="4" fill="white" stroke="url(#tech-ls-grad)" strokeWidth="1.5" />
+              <circle cx="48" cy="65" r="4" fill="white" stroke="url(#tech-ls-grad)" strokeWidth="1.5" />
+              <circle cx="52" cy="72" r="4" fill="url(#tech-ls-grad)" />
+            </svg>
           </div>
 
           <div className="relative flex flex-col">
@@ -551,15 +551,15 @@ export default async function Portfolio() {
                     </div>
                     {/* Content */}
                     <div className="relative p-6 flex flex-col flex-1 bg-slate-950/80 backdrop-blur-sm z-10">
-                       <h3 className="text-white text-2xl font-black uppercase tracking-tighter drop-shadow-md">{project.title}</h3>
-                       <p className="text-slate-400 text-sm font-medium mt-2 leading-relaxed flex-1">{project.description}</p>
-                       <div className="mt-6 flex items-center justify-between border-t border-slate-800/50 pt-5">
-                         {project.link && (
-                           <Link href={project.link} target="_blank" className="inline-flex items-center gap-2 text-white font-black hover:gap-4 transition-all duration-300 group/btn bg-white/10 hover:bg-white/20 px-5 py-2.5 rounded-full text-xs uppercase tracking-widest backdrop-blur-md">
-                             Explore <ExternalLink size={16} className={`transition-colors ${isCyan ? 'group-hover/btn:text-cyan-400' : 'group-hover/btn:text-amber-400'}`} />
-                           </Link>
-                         )}
-                       </div>
+                      <h3 className="text-white text-2xl font-black uppercase tracking-tighter drop-shadow-md">{project.title}</h3>
+                      <p className="text-slate-400 text-sm font-medium mt-2 leading-relaxed flex-1">{project.description}</p>
+                      <div className="mt-6 flex items-center justify-between border-t border-slate-800/50 pt-5">
+                        {project.link && (
+                          <Link href={project.link} target="_blank" className="inline-flex items-center gap-2 text-white font-black hover:gap-4 transition-all duration-300 group/btn bg-white/10 hover:bg-white/20 px-5 py-2.5 rounded-full text-xs uppercase tracking-widest backdrop-blur-md">
+                            Explore <ExternalLink size={16} className={`transition-colors ${isCyan ? 'group-hover/btn:text-cyan-400' : 'group-hover/btn:text-amber-400'}`} />
+                          </Link>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </Card>
@@ -590,15 +590,15 @@ export default async function Portfolio() {
                     </div>
                     {/* Content */}
                     <div className="relative p-8 flex flex-col flex-1 bg-slate-950/80 backdrop-blur-sm z-10 border-t border-slate-800/50">
-                       <h3 className="text-white text-3xl font-black uppercase tracking-tighter drop-shadow-md">{project.title}</h3>
-                       <p className="text-slate-400 text-base font-medium mt-3 leading-relaxed flex-1">{project.description}</p>
-                       <div className="mt-6 flex items-center justify-between border-t border-slate-800/50 pt-6">
-                         {project.link && (
-                           <Link href={project.link} target="_blank" className="inline-flex items-center gap-3 text-white font-black hover:gap-5 transition-all duration-300 group/btn bg-white/10 hover:bg-white/20 px-6 py-3 rounded-full text-sm uppercase tracking-widest backdrop-blur-md">
-                             Explore <ExternalLink size={18} className="group-hover/btn:text-amber-400 transition-colors" />
-                           </Link>
-                         )}
-                       </div>
+                      <h3 className="text-white text-3xl font-black uppercase tracking-tighter drop-shadow-md">{project.title}</h3>
+                      <p className="text-slate-400 text-base font-medium mt-3 leading-relaxed flex-1">{project.description}</p>
+                      <div className="mt-6 flex items-center justify-between border-t border-slate-800/50 pt-6">
+                        {project.link && (
+                          <Link href={project.link} target="_blank" className="inline-flex items-center gap-3 text-white font-black hover:gap-5 transition-all duration-300 group/btn bg-white/10 hover:bg-white/20 px-6 py-3 rounded-full text-sm uppercase tracking-widest backdrop-blur-md">
+                            Explore <ExternalLink size={18} className="group-hover/btn:text-amber-400 transition-colors" />
+                          </Link>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </Card>
@@ -626,15 +626,15 @@ export default async function Portfolio() {
                     </div>
                     {/* Content */}
                     <div className="relative p-8 flex flex-col flex-1 bg-slate-950/80 backdrop-blur-sm z-10 border-t border-slate-800/50">
-                       <h3 className="text-white text-3xl font-black uppercase tracking-tighter drop-shadow-md">{project.title}</h3>
-                       <p className="text-slate-400 text-base font-medium mt-3 leading-relaxed flex-1">{project.description}</p>
-                       <div className="mt-6 flex items-center justify-between border-t border-slate-800/50 pt-6">
-                         {project.link && (
-                           <Link href={project.link} target="_blank" className="inline-flex items-center gap-3 text-white font-black hover:gap-5 transition-all duration-300 group/btn bg-white/10 hover:bg-white/20 px-6 py-3 rounded-full text-sm uppercase tracking-widest backdrop-blur-md">
-                             Explore <ExternalLink size={18} className="group-hover/btn:text-cyan-400 transition-colors" />
-                           </Link>
-                         )}
-                       </div>
+                      <h3 className="text-white text-3xl font-black uppercase tracking-tighter drop-shadow-md">{project.title}</h3>
+                      <p className="text-slate-400 text-base font-medium mt-3 leading-relaxed flex-1">{project.description}</p>
+                      <div className="mt-6 flex items-center justify-between border-t border-slate-800/50 pt-6">
+                        {project.link && (
+                          <Link href={project.link} target="_blank" className="inline-flex items-center gap-3 text-white font-black hover:gap-5 transition-all duration-300 group/btn bg-white/10 hover:bg-white/20 px-6 py-3 rounded-full text-sm uppercase tracking-widest backdrop-blur-md">
+                            Explore <ExternalLink size={18} className="group-hover/btn:text-cyan-400 transition-colors" />
+                          </Link>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </Card>
@@ -666,8 +666,8 @@ export default async function Portfolio() {
                 <CardHeader className="p-6">
                   <div className="flex items-center gap-3 mb-4">
                     <Badge className={`px-4 py-1.5 rounded-full border-none font-bold uppercase tracking-widest text-[10px] ${cert.provider?.toLowerCase().includes('coursera') ? 'bg-blue-600 text-white' :
-                        cert.provider?.toLowerCase().includes('kaggle') ? 'bg-sky-500 text-white' :
-                          'bg-amber-500 text-white'
+                      cert.provider?.toLowerCase().includes('kaggle') ? 'bg-sky-500 text-white' :
+                        'bg-amber-500 text-white'
                       }`}>
                       {cert.provider}
                     </Badge>
